@@ -10,7 +10,7 @@ RUN apt-get update \
         unzip \
         libzip-dev \
         libpq-dev \
-    && docker-php-ext-install pdo_mysql pdo_pgsql zip \
+    && docker-php-ext-install bcmath pdo_mysql pdo_pgsql zip \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && apt-get clean \

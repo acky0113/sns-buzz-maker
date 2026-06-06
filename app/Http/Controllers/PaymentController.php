@@ -13,8 +13,8 @@ class PaymentController extends Controller
 
         $checkout = $user->checkout($request->price_id, [
             'mode' => 'subscription',
-            'success_url' => 'http://127.0.0.1:8000/thanks?success=true',
-            'cancel_url' => 'http://127.0.0.1:8000/?canceled=true',
+            'success_url' => config('app.url') . '/thanks?success=true',
+            'cancel_url' => config('app.url') . '/?canceled=true',
         ]);
 
         return response()->json(['url' => $checkout->url]);

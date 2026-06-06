@@ -4,11 +4,12 @@ WORKDIR /app
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        curl \
         git \
         unzip \
         libzip-dev \
         libpq-dev \
-        default-mysql-client \
     && docker-php-ext-install pdo_mysql pdo_pgsql zip \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
